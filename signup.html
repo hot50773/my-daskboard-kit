@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+  <title>Document</title>
+  <link rel="stylesheet" href="dist/css/theme.css">
+  <link rel="stylesheet" href="dist/css/base.css">
+</head>
+
+<body>
+  <div class="my-page-wrapper my-signin my-signin--bg">
+    <div class="signin-container">
+      <div class="signin-body">
+        <div class="signin-logo"><img class="w-100" alt="logo" /></div>
+
+        <div class="alert alert-danger fade show my-5" role="alert">
+          <div class="alert-icon"><i class="la la-exclamation-triangle"></i></div>
+          <div class="alert-text text-center mr-2">message<br />message <br> message
+          </div>
+          <div class="alert-close">
+            <button class="close" type="button" data-dismiss="alert" aria-label="Close">
+              <span aria-hidden="true">
+                x<i class="la la-close"></i>
+              </span>
+            </button>
+          </div>
+        </div>
+
+        <form class="form" id="form-signin" method="POST" action="/signin">
+          <div class="form-group si-signin__form-group">
+            <input class="form-control si-signin__input" id="inp-account" name="account" type="text" placeholder="帳號" autocomplete="off" required data-parsley-length="[4, 32]" data-parsley-type="alphanum"/>
+          </div>
+          <div class="form-group si-signin__form-group">
+            <input class="form-control si-signin__input" id="inp-password" name="password" type="password" placeholder="common.password" autocomplete="off" required data-parsley-length="[8, 32]"/>
+          </div>
+          <div class="form-group si-signin__form-group">
+            <input class="form-control si-signin__input" id="inp-valid-password" name="valid-password" type="password" placeholder="common.confirmPassword" autocomplete="off" required data-parsley-length="[8, 32]" data-parsley-equalto="#inp-password" data-parsley-equalto-message="common.passwordNotEqual"/>
+          </div>
+          <div class="form-group si-signin__form-group">
+            <input class="form-control si-signin__input si-signin__input-last" id="inp-name" name="name" type="text" placeholder="common.name" autocomplete="off" required data-parsley-length="[1, 16]"/>
+          </div>
+          <div class="form-group si-signin__form-group-last">
+            <input class="form-control si-signin__input si-signin__input-last" id="inp-gogovanid" name="gogovanid" type="text" placeholder="common.gogovanId" autocomplete="off" required data-parsley-length="[1, 64]"/>
+          </div>
+          <div class="signin-actions">
+            <button class="btn btn-pill btn-primary-mark waves-effect waves-light my-font-size-1"
+              type="submit">註冊</button>
+          </div>
+          <div class="signin-account my-font-size-2"><span>已經有帳號嗎？</span>&nbsp;<a class="signin-account-link"
+              href="/signin.html">立即登入</a></div>
+        </form>
+      </div>
+    </div>
+  </div>
+</body>
+
+</html>

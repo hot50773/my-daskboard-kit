@@ -31,6 +31,10 @@ ul {
 @import 'helpers/helpers';
 
 // import Components
+@import "components/button";
+@import "components/badge";
+@import "components/alert";
+@import "components/table";
 @import 'components/bootstrap-select';
 @import 'components/bootstrap-switch';
 @import 'components/datatable';
@@ -41,6 +45,7 @@ ul {
 
 @import 'components/sidebar';
 
+@import 'pages/document';
 @import 'pages/signin';
 @import 'pages/account';
 @import 'pages/error';

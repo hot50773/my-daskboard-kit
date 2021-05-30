@@ -1,0 +1,26 @@
+/*
+---
+Button Custimization
+---
+1. btn-solid
+2. button with line-awesome
+*/
+
+// Button Solid
+@each $color, $value in $theme-colors {
+  .btn.btn-solid-#{$color} {
+    background: $value;
+    color: my-color-yiq($value, darken($value, $my-text-yiq-darken-rate), #fff);
+  }
+}
+
+// Line Awesome Button
+.btn [class*="la-"],
+.btn [class^="la-"] {
+  font-size: 1.4rem;
+}
+
+.btn i {
+  padding-right: 0.25rem;
+  vertical-align: middle;
+}

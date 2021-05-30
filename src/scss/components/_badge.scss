@@ -1,0 +1,80 @@
+/*
+---
+Badge Customization
+---
+1. reset badge
+2. badge-rounded
+3. badge-dot (variant: sm, md, lg)
+4. badge-solid
+*/
+
+// Reset
+.badge {
+  vertical-align: middle;
+}
+
+// badge-rounded
+.badge.badge-rounded {
+  border: 0;
+  border-radius: 1.7em;
+  transition: all 0.3s;
+  padding: 0.1em 0.3em;
+  margin: 0.1em 0.15em;
+  min-width: 1.5em;
+  height: 1.7em;
+  line-height: 1.5em;
+  font-size: 0.9em;
+  text-align: center;
+}
+
+// badge-dot
+.badge.badge-dot {
+  display: inline-block;
+  line-height: 0.6rem;
+  min-height: 0.6rem;
+  min-width: 0.6rem;
+  height: 0.6rem;
+  width: 0.6rem;
+  padding: 0;
+  margin: 0;
+  font-size: 0;
+  vertical-align: middle;
+  text-align: center;
+
+  &.badge-dot-sm {
+    line-height: 0.4rem;
+    min-height: 0.4rem;
+    min-width: 0.4rem;
+    height: 0.4rem;
+    width: 0.4rem;
+  }
+
+  &.badge-dot-md {
+    line-height: 0.6rem;
+    min-height: 0.6rem;
+    min-width: 0.6rem;
+    height: 0.6rem;
+    width: 0.6em;
+  }
+
+  &.badge-dot-lg {
+    line-height: 0.8rem;
+    min-height: 0.8rem;
+    min-width: 0.8rem;
+    height: 0.8rem;
+    width: 0.8rem;
+  }
+}
+
+// badge-solid
+@each $color, $value in $theme-colors {
+  .badge.badge-solid-#{$color},
+  .badge.badge-solid-#{$color}-pulse {
+    background: $value;
+    color: my-color-yiq($value, darken($value, $my-text-yiq-darken-rate), #fff);
+  }
+
+  .badge.badge-solid-#{$color}-pulse {
+    @include my-animation("my-pulse-#{$color} 1s linear forwards");
+  }
+}
