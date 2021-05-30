@@ -1,0 +1,48 @@
+// Reset
+* {
+  -webkit-font-smoothing: antialiased; //Chrome
+  -moz-osx-font-smoothing: grayscale;  //Safari
+}
+
+html, body {
+  width: 100%;
+  height: 100%;
+}
+
+ul {
+  padding-inline-start: 30px;
+}
+
+@import 'config';
+
+// import Bootstrap & Shards Functions
+@import "bootstrap/scss/functions";
+@import "shards-ui/src/scss/mixins";
+
+// import Shards & Bootstrap Variables
+// Important: 'Shards Variables' must be imported before 'Bootstrap Variables'
+@import "shards-ui/src/scss/variables";
+@import "bootstrap/scss/variables";
+
+// @import 'theme/import';
+// @import 'theme/custom-extensions';
+
+// import Helpers
+@import 'helpers/helpers';
+
+// import Components
+@import 'components/bootstrap-select';
+@import 'components/bootstrap-switch';
+@import 'components/datatable';
+@import 'components/datetimepicker';
+@import 'components/ion-range-slider';
+@import 'components/line-awesome';
+@import 'components/toastr';
+
+@import 'components/sidebar';
+
+@import 'pages/signin';
+@import 'pages/account';
+@import 'pages/dispatch';
+@import 'pages/error';
+@import 'pages/forms';

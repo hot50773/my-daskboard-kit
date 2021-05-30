@@ -1,0 +1,17 @@
+// SHards and Bootstrap Theme
+
+// Reset
+* {
+  -webkit-font-smoothing: antialiased; //Chrome
+  -moz-osx-font-smoothing: grayscale;  //Safari
+}
+
+html, body {
+  width: 100%;
+  height: 100%;
+}
+
+@import 'config';
+
+@import 'theme/import';
+@import 'theme/custom-extensions';

@@ -1,0 +1,48 @@
+
+.bootstrap-switch {
+
+	.bootstrap-switch-handle-on,
+	.bootstrap-switch-handle-off {
+		&.bootstrap-switch-primary {
+			background: $primary;
+			color: #fff;
+		}
+
+		&.bootstrap-switch-default {
+			background: #eee;
+			color: rgba(0, 0, 0, .87);
+		}
+
+		&.bootstrap-switch-secondary {
+			background: $secondary;
+			color: #fff;
+		}
+
+		&.bootstrap-switch-info {
+			background: $info;
+			color: #fff;
+		}
+
+		&.bootstrap-switch-success {
+			background: $success-mark;
+			color: #fff;
+		}
+
+		&.bootstrap-switch-warning {
+			background: $warning;
+			color: #fff;
+		}
+
+		&.bootstrap-switch-danger {
+			background: $danger;
+			color: #fff;
+		}
+	}
+
+
+	&.bootstrap-switch-focused {
+		border-color: lighten($success, 10%);
+		outline: 0;
+		box-shadow: inset 0 1px 1px rgba(0, 0, 0, .075), 0 0 8px rgba(102, 175, 233, 0.6);
+	}
+}

@@ -1,0 +1,24 @@
+#toast-container > div {
+  -moz-box-shadow: 0 0 12px #666;
+  -webkit-box-shadow: 0 0 12px #666;
+  box-shadow: 0 0 12px #666;
+  color: #ffffff;
+  opacity: 0.9;
+  -ms-filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=90);
+  filter: alpha(opacity=90);
+}
+.toast {
+  background-color: #030303;
+}
+.toast-success {
+  background-color: $success-mark;
+}
+.toast-error {
+  background-color: $danger;
+}
+.toast-info {
+  background-color: $info;
+}
+.toast-warning {
+  background-color: $warning-mark;
+}

@@ -1,0 +1,46 @@
+// .dataTables_processing.card {
+//   color: #333;
+// }
+.dataTables_wrapper .custom-select, .dt-bootstrap4 .custom-select {
+  background-image: none;
+}
+div.dataTables_wrapper div.dataTables_info {
+  padding-top: 2rem;
+}
+
+div.dataTables_wrapper .dataTables_scrollBody {
+  padding-bottom: 0.75rem;
+}
+
+div.dataTables_wrapper .dataTables_length .custom-select { max-width: 4rem; }
+
+div.dataTables_wrapper div.dataTables_paginate ul.pagination { margin: 2rem 0; }
+
+table.dataTable {
+  thead { background: $si-label-3; }
+  tbody { background: $si-label-5; }
+  th { min-width: 3rem; }
+  text-align: center;
+  &.table-bordered, &.table-bordered td, &.table-bordered th {
+    // border: 1px solid $si-label-4;
+    border: 1px solid $si-label-6;
+  }
+
+  & > tbody > tr.child { text-align: left; }
+
+  &.dtr-inline.collapsed > tbody > tr[role="row"] > td:first-child::before, &.dtr-inline.collapsed > tbody > tr[role="row"] > th:first-child::before {
+    background-color: lighten($primary, 3%);
+    // border: 1px solid white;
+    top: 1rem;
+    left: 8px;
+  }
+
+  &.dtr-inline.collapsed > tbody > tr.parent > td:first-child::before, &.dtr-inline.collapsed > tbody > tr.parent > th:first-child::before {
+    content: "-";
+    background-color: $danger-mark;
+  }
+
+  & > tbody > tr.child ul.dtr-details > li {
+    border-bottom: 1px solid $si-label-5;
+  }
+}

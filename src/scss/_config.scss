@@ -1,0 +1,197 @@
+// Bootstrap config
+// For custimizing bootstrap components (cards, tables, buttons, ...), please checkout scss/components folder.
+// ---------------
+// si custom color
+// ---------------
+$si-label-0: #d8d8d8;
+$si-label-1: #9b9b9b;
+$si-label-2: #7e8293;
+$si-label-3: #5f6772;
+$si-label-4: #434850;
+$si-label-5: #3a3e44;
+$si-label-6: #2f3238;
+
+// ---------------------
+// bootstrap state color
+// ---------------------
+$dark:         #25282e;
+$darker:         #202328;
+
+$primary:      #0088bf;
+$primary-mark: #016a96;
+$primary-solid: $primary-mark;
+
+$secondary:    #7e8293;
+$secondary-mark: #25282e;
+$secondary-solid: $secondary-mark;
+
+$warning:      #ffde01;
+$warning-mark: #fec930;
+$warning-solid: #945c00;
+
+$success:      #50e3c2;
+$success-mark: #24daba;
+$success-solid: #1c8069;
+
+$info:         #5ed4ff;
+$info-mark:    #0088bf;
+$info-solid:    $info-mark;
+
+$purple:       #9a6bfa;
+$purple-mark:  #6239ff;
+$purple-solid: #391aaf;
+
+$danger:       #ff7081;
+$danger-mark:  #eb4c53;
+$danger-solid: #a71018;
+
+$theme-colors: (
+  "darker":           $darker,
+  "primary":          $primary,
+  "primary-mark":     $primary-mark,
+  "secondary":        $secondary,
+  "success":          $success,
+  "success-mark":     $success-mark,
+  "info":             $info,
+  "info-mark":        $info-mark,
+  "warning":          $warning,
+  "warning-mark":     $warning-mark,
+  "danger":           $danger,
+  "danger-mark":      $danger-mark,
+  "purple":           $purple,
+  "purple-mark":      $purple-mark,
+);
+
+// --------------------------
+// Other Bootstrap Variables
+// --------------------------
+// $sizes affects the `.h-*` and `.w-*` classes.
+
+// example:
+//   $sizes: (
+//     10: 10%,
+//     '10rem': 10rem
+//   )
+$sizes: () !default;
+
+// Body
+$body-bg:                   #25282e;
+$body-color:                #ffffff;
+$font-family-base:          "Poppins", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, "Helvetica Neue","Microsoft YaHei", "Microsoft YaHei Bold", "WenQuanYi Zen Hei", Arial, sans-serif;
+// font weight
+$font-weight-lighter:        lighter;
+$font-weight-light:          400;
+$font-weight-normal:         500;
+$font-weight-bold:           600;
+$font-weight-bolder:         700;
+$headings-font-weight:       600;
+
+$headings-color:            #ffffff;
+
+// btn
+$btn-font-size:               0.9rem;
+// $btn-padding-x: 1.75rem;
+
+// badge
+$badge-font-size:             85%;
+$badge-padding-y:             .3em;
+$badge-padding-x:             .4em;
+
+// $form-feedback-valid-color:         theme-color("success") !default;
+$form-feedback-font-size:      1rem;
+$form-feedback-invalid-color:  $danger-solid;
+
+// card
+
+$card-cap-bg:                  $si-label-4;
+$card-bg:                      $si-label-5;
+
+$card-box-shadow:             0 .46875rem 2.1875rem rgba($si-label-6, .1),
+                              0 .9375rem 1.40625rem rgba($si-label-6, .1),
+                              0 .25rem .53125rem rgba($si-label-6, .12),
+                              0 .125rem .1875rem rgba($si-label-6, .1) !important;
+
+$modal-content-bg:           $si-label-5;
+$modal-content-border-color: rgba(0, 0, 0, .2);
+$modal-header-border-color:  rgba(0, 0, 0, .2);;
+$modal-footer-border-color:  rgba(0, 0, 0, .2);;
+$modal-backdrop-bg:          black;
+$modal-backdrop-opacity:     0.8;
+
+// popover
+$popover-bg:                 $si-label-5;
+
+// caret
+$caret-width:                .4em;
+
+// ---------------------
+// SI Custom Variables
+// ---------------------
+$si-yiq-contrasted-threshold: 130;
+$si-text-yiq-darken-rate:     45%;
+
+$si-sidebar-width:            90px;
+$si-sidebar-panel-width:      260px;
+
+// ---------------------
+//  SI Custom Functions
+// ---------------------
+@function si-color-yiq($color, $dark: $yiq-text-dark, $light: $yiq-text-light) {
+  $r: red($color);
+  $g: green($color);
+  $b: blue($color);
+
+  $yiq: (($r * 299) + ($g * 587) + ($b * 114)) / 1000;
+
+  @return if($yiq >= $si-yiq-contrasted-threshold, $dark, $light);
+}
+// ---------------------
+//  SI Custom Mixins
+// ---------------------
+@mixin si-browser-prefix($property, $value) {
+  -webkit-#{$property}: #{$value};
+     -moz-#{$property}: #{$value};
+      -ms-#{$property}: #{$value};
+       -o-#{$property}: #{$value};
+          #{$property}: #{$value};
+}
+
+@mixin si-animation($str) {
+  @include si-browser-prefix('animation', $str);
+}
+
+@mixin si-keyframes($animation-name) {
+  @-webkit-keyframes #{$animation-name} {@content; }
+  @-moz-keyframes #{$animation-name} { @content; }
+  @-ms-keyframes #{$animation-name} { @content; }
+  @-o-keyframes #{$animation-name} { @content; }
+  @keyframes #{$animation-name} { @content; }
+}
+
+
+// --------------
+//   Keyframes
+// --------------
+@include si-keyframes('si-flash') {
+  from, 50%, to { opacity: 1; }
+  25%, 75% { opacity: 0; }
+}
+
+
+@include si-keyframes('si-progress-active-right') {
+  0% { background-position: 0 0; }
+  100% { background-position: 3.5rem 0; }
+}
+
+@include si-keyframes('si-progress-active-left') {
+  0% { background-position: 0 0; }
+  100% { background-position: -3.5rem 0; }
+}
+
+@each $name, $color in $theme-colors {
+  @include si-keyframes('si-pulse-#{$name}') {
+    0% { box-shadow: 0 0 0.75rem rgba($color, 1), 0 0 1.25rem rgba($color, 1); }
+    50% { box-shadow: 0 0 0 0.5rem rgba($color, 0.5), 0 0 0 1rem rgba($color, 0.5); }
+    100% { box-shadow: 0 0 0 0.75rem transparent, 0 0 0 1.25rem transparent; }
+  }
+}

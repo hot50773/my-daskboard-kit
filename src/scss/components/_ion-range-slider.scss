@@ -1,0 +1,144 @@
+.irs--round {
+  $irs-top: 26px;
+  $irs-bottom: 21px;
+  $irs-line-height: 14px;
+  $irs-handle-width: 24px;
+  $irs-handle-height: 24px;
+  $irs-handle-top: 22px;
+
+  $irs-line-color: $dark;
+  // $irs-line-color:#082d3e;
+  $irs-bar-color: $warning;
+  $irs-handle-color-1: white;
+  $irs-handle-color-2: white;
+  $irs-handle-color-3: #f0f6ff;
+  $irs-minmax-text-color: white;
+  $irs-minmax-bg-color: $si-label-5;
+  $irs-label-color-1: $primary;
+  $irs-label-color-2: white;
+  $irs-grid-color-1: #dedede;
+  $irs-grid-color-2: silver;
+
+  // manual variable
+  $irs-border-radius: 4px;
+
+  height: 50px;
+
+  &.irs-with-grid {
+    height: 65px;
+  }
+
+  .irs-line {
+    top: $irs-top;
+    height: $irs-line-height;
+    background-color: $irs-line-color;
+    border-radius: $irs-line-height;
+  }
+
+  .irs-bar {
+    top: $irs-top;
+    height: $irs-line-height;
+    background-color: $irs-bar-color;
+
+    // &--single {
+    //   border-radius: $irs-line-height 0 0 $irs-line-height;
+    // }
+    &--single {
+      border-radius: 4px 0 0 4px;
+    }
+  }
+
+  .irs-shadow {
+    height: 4px;
+    bottom: $irs-bottom;
+    background-color: fade($irs-line-color, 50%);
+  }
+
+  .irs-handle {
+    top: $irs-handle-top;
+    width: $irs-handle-width;
+    height: $irs-handle-height;
+    border: 4px solid $irs-handle-color-1;
+    background-color: $irs-handle-color-2;
+    border-radius: $irs-handle-width;
+    box-shadow: 0 1px 3px rgba(0, 0, 255, 0.3);
+
+    &.state_hover,
+    &:hover {
+      background-color: $irs-handle-color-3;
+    }
+  }
+
+  .irs-min,
+  .irs-max {
+    color: $irs-minmax-text-color;
+    font-size: 14px;
+    line-height: 1;
+    top: 0;
+    padding: 3px 5px;
+    background-color: $irs-minmax-bg-color;
+    border-radius: $irs-border-radius;
+  }
+
+  .irs-from,
+  .irs-to,
+  .irs-single {
+    font-size: 14px;
+    line-height: 1;
+    text-shadow: none;
+    padding: 3px 5px;
+    background-color: $irs-label-color-1;
+    color: $irs-label-color-2;
+    border-radius: $irs-border-radius;
+
+    &:before {
+      position: absolute;
+      display: block;
+      content: "";
+      bottom: -6px;
+      left: 50%;
+      width: 0;
+      height: 0;
+      margin-left: -3px;
+      overflow: hidden;
+      border: 3px solid transparent;
+      border-top-color: $irs-label-color-1;
+    }
+  }
+
+  .irs-grid {
+    height: 25px;
+
+    &-pol {
+      background-color: $irs-grid-color-1;
+    }
+
+    &-text {
+      color: $irs-grid-color-2;
+      font-size: 13px;
+    }
+  }
+}
+
+// .irs--round .irs-line {
+//   top: $irs-top;
+//   height: $irs-line-height;
+//   background-color: #082d3e;
+//   border-radius: 50px;
+// }
+
+// .irs--round .irs-bar {
+//   top: $irs-top;
+//   height: $irs-line-height;
+//   background-color: $warning;
+// }
+
+// .irs--round .irs-handle {
+//   top: 26px;
+//   width: 24px;
+//   height: 24px;
+//   border: 4px solid $irs-handle-color-1;
+//   background-color: #fff;
+//   border-radius: 24px;
+//   box-shadow: 0 1px 3px rgba(0, 0, 255, 0.3);
+// }

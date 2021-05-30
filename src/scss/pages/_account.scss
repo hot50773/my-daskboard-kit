@@ -1,0 +1,41 @@
+.si-account__topbar {
+  width: 100%;
+  height: 60px;
+  // background-image: linear-gradient(135deg, $primary-mark 20%, $primary 20%, $primary 50%, $primary-mark 50%, $primary-mark 70%, $primary 70%, $primary 100%);
+  // background-size: auto 100%;
+}
+
+.si-account__body {
+  padding: 3rem;
+  .form-control:focus {
+    box-shadow: inset 0 1px 1px rgba(0,0,0,.075),0 0 8px rgba(102,175,233,.6);
+  }
+
+  .input-group-text {
+    background: $primary;
+    border: transparent;
+    color: $white;
+  }
+
+  .si-account__info-label { min-width: 4rem; }
+
+  .input-group i { font-size: 1rem; }
+
+
+// Form validation (Mixin from 'bootstrap/scss/_form.scss')
+//
+// Provide feedback to users when form field values are valid or invalid. Works
+// primarily for client-side validation via scoped `:invalid` and `:valid`
+// pseudo-classes but also includes `.is-invalid` and `.is-valid` classes for
+// server side validation.
+
+  @include form-validation-state("valid", $success);
+  @include form-validation-state("invalid", $danger);
+
+  .si-account__password-error-msg .invalid-feedback,
+  .si-account__password-error-msg .invalid-tooltip,
+  .si-account__password-error-msg .invalid-feedback,
+  .si-account__password-error-msg .invalid-tooltip {
+    display: block;
+  }
+}
