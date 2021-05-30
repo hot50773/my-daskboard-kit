@@ -17,13 +17,13 @@ div.dataTables_wrapper .dataTables_length .custom-select { max-width: 4rem; }
 div.dataTables_wrapper div.dataTables_paginate ul.pagination { margin: 2rem 0; }
 
 table.dataTable {
-  thead { background: $si-label-3; }
-  tbody { background: $si-label-5; }
+  thead { background: $my-label-3; }
+  tbody { background: $my-label-5; }
   th { min-width: 3rem; }
   text-align: center;
   &.table-bordered, &.table-bordered td, &.table-bordered th {
-    // border: 1px solid $si-label-4;
-    border: 1px solid $si-label-6;
+    // border: 1px solid $my-label-4;
+    border: 1px solid $my-label-6;
   }
 
   & > tbody > tr.child { text-align: left; }
@@ -41,6 +41,6 @@ table.dataTable {
   }
 
   & > tbody > tr.child ul.dtr-details > li {
-    border-bottom: 1px solid $si-label-5;
+    border-bottom: 1px solid $my-label-5;
   }
 }

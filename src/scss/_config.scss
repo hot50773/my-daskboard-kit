@@ -3,13 +3,13 @@
 // ---------------
 // si custom color
 // ---------------
-$si-label-0: #d8d8d8;
-$si-label-1: #9b9b9b;
-$si-label-2: #7e8293;
-$si-label-3: #5f6772;
-$si-label-4: #434850;
-$si-label-5: #3a3e44;
-$si-label-6: #2f3238;
+$my-label-0: #d8d8d8;
+$my-label-1: #9b9b9b;
+$my-label-2: #7e8293;
+$my-label-3: #5f6772;
+$my-label-4: #434850;
+$my-label-5: #3a3e44;
+$my-label-6: #2f3238;
 
 // ---------------------
 // bootstrap state color
@@ -17,16 +17,16 @@ $si-label-6: #2f3238;
 $dark:         #25282e;
 $darker:         #202328;
 
-$primary:      #0088bf;
-$primary-mark: #016a96;
+$primary:      #2780e3;
+$primary-mark: darken($primary,0.2);
 $primary-solid: $primary-mark;
 
 $secondary:    #7e8293;
 $secondary-mark: #25282e;
 $secondary-solid: $secondary-mark;
 
-$warning:      #ffde01;
-$warning-mark: #fec930;
+$warning:      #ffc900;
+$warning-mark: darken(#fec930, 0.2);
 $warning-solid: #945c00;
 
 $success:      #50e3c2;
@@ -78,6 +78,7 @@ $sizes: () !default;
 $body-bg:                   #25282e;
 $body-color:                #ffffff;
 $font-family-base:          "Poppins", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, "Helvetica Neue","Microsoft YaHei", "Microsoft YaHei Bold", "WenQuanYi Zen Hei", Arial, sans-serif;
+
 // font weight
 $font-weight-lighter:        lighter;
 $font-weight-light:          400;
@@ -103,23 +104,17 @@ $form-feedback-invalid-color:  $danger-solid;
 
 // card
 
-$card-cap-bg:                  $si-label-4;
-$card-bg:                      $si-label-5;
+$card-cap-bg:                  $my-label-4;
+$card-bg:                      $my-label-5;
 
-$card-box-shadow:             0 .46875rem 2.1875rem rgba($si-label-6, .1),
-                              0 .9375rem 1.40625rem rgba($si-label-6, .1),
-                              0 .25rem .53125rem rgba($si-label-6, .12),
-                              0 .125rem .1875rem rgba($si-label-6, .1) !important;
+$card-box-shadow:             0 .46875rem 2.1875rem rgba($my-label-6, .1),
+                              0 .9375rem 1.40625rem rgba($my-label-6, .1),
+                              0 .25rem .53125rem rgba($my-label-6, .12),
+                              0 .125rem .1875rem rgba($my-label-6, .1) !important;
 
-$modal-content-bg:           $si-label-5;
-$modal-content-border-color: rgba(0, 0, 0, .2);
-$modal-header-border-color:  rgba(0, 0, 0, .2);;
-$modal-footer-border-color:  rgba(0, 0, 0, .2);;
-$modal-backdrop-bg:          black;
-$modal-backdrop-opacity:     0.8;
 
 // popover
-$popover-bg:                 $si-label-5;
+$popover-bg:                 $my-label-5;
 
 // caret
 $caret-width:                .4em;
@@ -127,28 +122,28 @@ $caret-width:                .4em;
 // ---------------------
 // SI Custom Variables
 // ---------------------
-$si-yiq-contrasted-threshold: 130;
-$si-text-yiq-darken-rate:     45%;
+$my-yiq-contrasted-threshold: 130;
+$my-text-yiq-darken-rate:     45%;
 
-$si-sidebar-width:            90px;
-$si-sidebar-panel-width:      260px;
+$my-sidebar-width:            90px;
+$my-sidebar-panel-width:      260px;
 
 // ---------------------
 //  SI Custom Functions
 // ---------------------
-@function si-color-yiq($color, $dark: $yiq-text-dark, $light: $yiq-text-light) {
+@function my-color-yiq($color, $dark: $yiq-text-dark, $light: $yiq-text-light) {
   $r: red($color);
   $g: green($color);
   $b: blue($color);
 
   $yiq: (($r * 299) + ($g * 587) + ($b * 114)) / 1000;
 
-  @return if($yiq >= $si-yiq-contrasted-threshold, $dark, $light);
+  @return if($yiq >= $my-yiq-contrasted-threshold, $dark, $light);
 }
 // ---------------------
 //  SI Custom Mixins
 // ---------------------
-@mixin si-browser-prefix($property, $value) {
+@mixin my-browser-prefix($property, $value) {
   -webkit-#{$property}: #{$value};
      -moz-#{$property}: #{$value};
       -ms-#{$property}: #{$value};
@@ -156,11 +151,11 @@ $si-sidebar-panel-width:      260px;
           #{$property}: #{$value};
 }
 
-@mixin si-animation($str) {
-  @include si-browser-prefix('animation', $str);
+@mixin my-animation($str) {
+  @include my-browser-prefix('animation', $str);
 }
 
-@mixin si-keyframes($animation-name) {
+@mixin my-keyframes($animation-name) {
   @-webkit-keyframes #{$animation-name} {@content; }
   @-moz-keyframes #{$animation-name} { @content; }
   @-ms-keyframes #{$animation-name} { @content; }
@@ -172,24 +167,24 @@ $si-sidebar-panel-width:      260px;
 // --------------
 //   Keyframes
 // --------------
-@include si-keyframes('si-flash') {
+@include my-keyframes('my-flash') {
   from, 50%, to { opacity: 1; }
   25%, 75% { opacity: 0; }
 }
 
 
-@include si-keyframes('si-progress-active-right') {
+@include my-keyframes('my-progress-active-right') {
   0% { background-position: 0 0; }
   100% { background-position: 3.5rem 0; }
 }
 
-@include si-keyframes('si-progress-active-left') {
+@include my-keyframes('my-progress-active-left') {
   0% { background-position: 0 0; }
   100% { background-position: -3.5rem 0; }
 }
 
 @each $name, $color in $theme-colors {
-  @include si-keyframes('si-pulse-#{$name}') {
+  @include my-keyframes('my-pulse-#{$name}') {
     0% { box-shadow: 0 0 0.75rem rgba($color, 1), 0 0 1.25rem rgba($color, 1); }
     50% { box-shadow: 0 0 0 0.5rem rgba($color, 0.5), 0 0 0 1rem rgba($color, 0.5); }
     100% { box-shadow: 0 0 0 0.75rem transparent, 0 0 0 1.25rem transparent; }

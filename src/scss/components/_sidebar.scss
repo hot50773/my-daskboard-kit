@@ -1,11 +1,11 @@
 /* ---------
     SIDEBAR
 ------------ */
-.si-sidebar {
+.my-sidebar {
   position: fixed;
   z-index: 1000;
-  min-width: $si-sidebar-width;
-  max-width: $si-sidebar-width;
+  min-width: $my-sidebar-width;
+  max-width: $my-sidebar-width;
   height: 100vh;
   min-height: 100%;
   max-height: 100vh;
@@ -23,59 +23,59 @@
   }
 }
 
-.si-sidebar .si-sidebar__header {
+.my-sidebar .my-sidebar__header {
   padding: 0.25rem 1rem 0;
   background: transparent;
 }
 
-.si-sidebar .si-sidebar__header img {
+.my-sidebar .my-sidebar__header img {
   display: block;
   padding: 1rem 0;
   border-bottom: 2px solid $primary-mark;
 }
 
-.si-sidebar .si-sidebar__menu .si-sidebar__menu-link {
+.my-sidebar .my-sidebar__menu .my-sidebar__menu-link {
   display: block;
   color: $warning;
   padding: 0.6rem 0;
 }
 // TODO
-.si-sidebar .si-sidebar__menu .si-sidebar__menu-item.active svg {
+.my-sidebar .my-sidebar__menu .my-sidebar__menu-item.active svg {
   circle { fill: $primary-mark; }
   path { fill: $warning; }
 }
-.si-sidebar .si-sidebar__actions {
+.my-sidebar .my-sidebar__actions {
   margin-bottom: 0;
 }
-.si-sidebar .si-sidebar__actions a {
+.my-sidebar .my-sidebar__actions a {
   display: block;
   color: #ffffff;
   padding: 0.4rem 0;
   font-size: 0.8em;
 }
 
-.si-sidebar .si-sidebar__menu img, .si-sidebar .si-sidebar__menu svg {
+.my-sidebar .my-sidebar__menu img, .my-sidebar .my-sidebar__menu svg {
   display: inline-block;
   width: 3rem;
   height: 3rem;
   margin-bottom: -0.3rem;
 }
 
-.si-sidebar .si-sidebar__menu {
+.my-sidebar .my-sidebar__menu {
   padding: 0.4rem 0 0;
   margin-bottom: 0;
 }
 
-.si-sidebar .si-sidebar__menu a:hover, .si-sidebar__actions a:hover {
+.my-sidebar .my-sidebar__menu a:hover, .my-sidebar__actions a:hover {
   color: #ffffff;
   background: darken($primary, 5%);
 }
 
-.si-sidebar .si-sidebar__actions a {
+.my-sidebar .my-sidebar__actions a {
   padding: 0.35rem 0;
   color: #ffffff;
 }
-.si-sidebar .si-sidebar__actions img {
+.my-sidebar .my-sidebar__actions img {
   display: inline-block;
   width: 2.8rem;
   height: 2.8rem;
@@ -83,29 +83,29 @@
 
 
 
-.si-sidebar__panel-wrapper {
+.my-sidebar__panel-wrapper {
   position: fixed;
   z-index: 1000;
   height: 100%;
-  margin-left: $si-sidebar-width;
-  .si-sidebar__panel {
+  margin-left: $my-sidebar-width;
+  .my-sidebar__panel {
     height: 100%;
     min-width: 15rem;
     padding: 2rem 0 6rem;
   }
 
-  .si-sidebar__panel-head {
+  .my-sidebar__panel-head {
     display: flex;
     justify-content: flex-end;
     align-items: center;
   }
 
-  .si-sidebar__panel-body {
+  .my-sidebar__panel-body {
     padding: 3rem 2rem;
   }
 
-  .si-sidebar__panel-item {
-    min-width: $si-sidebar-panel-width;
+  .my-sidebar__panel-item {
+    min-width: $my-sidebar-panel-width;
     background: $primary-mark;
     height: 100%;
     color: white;
@@ -116,25 +116,25 @@
 }
 
 @media screen and (max-height: 900px) {
-  .si-sidebar .si-sidebar__menu img, .si-sidebar .si-sidebar__menu svg {
+  .my-sidebar .my-sidebar__menu img, .my-sidebar .my-sidebar__menu svg {
     width: 2.5rem;
     height: 2.5rem;
     margin-bottom: -0.4rem;
   }
 
-  .si-sidebar .si-sidebar__menu {
+  .my-sidebar .my-sidebar__menu {
     max-height: calc(100vh - 230px);
     overflow-y: auto;
   }
 
-  .si-sidebar .si-sidebar__menu .si-sidebar__menu-link {
+  .my-sidebar .my-sidebar__menu .my-sidebar__menu-link {
     padding: 0.5rem 0;
   }
 }
 
 
 @media screen and (min-width: 1600px) {
-  .si-sidebar .si-sidebar__menu .si-sidebar__menu-link {
+  .my-sidebar .my-sidebar__menu .my-sidebar__menu-link {
     padding: 0.8rem 0;
   }
 }

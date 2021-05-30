@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+  <title>Document</title>
+  <link rel="stylesheet" href="dist/css/theme.css">
+  <link rel="stylesheet" href="dist/css/base.css">
+</head>
+<body>
+<div class="my-page-wrapper my-signin my-signin--bg">
+  <div class="signin-container">
+    <div class="signin-body">
+      <div class="signin-logo"><img class="w-100" alt="logo" /></div>
+
+      <div class="alert alert-danger fade show my-5" role="alert">
+        <div class="alert-icon"><i class="la la-exclamation-triangle"></i></div>
+        <div class="alert-text text-center mr-2">message<br/>message <br> message
+        </div>
+        <div class="alert-close">
+          <button class="close" type="button" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">X<i class="la la-close"></i></span></button>
+        </div>
+      </div>
+
+      <form class="form" id="form-signin" method="POST" name="form-signin" action="/signin">
+        <div class="form-group signin-form-group">
+          <input class="form-control signin-input" id="inp-account" name="account" type="text" placeholder="account" required="required" data-parsley-required="true" data-parsley-length="[4, 32]"/>
+        </div>
+        <div class="form-group signin-form-group-last">
+          <input class="form-control signin-input" id="inp-password" name="password" type="password" placeholder="password" required="required" data-parsley-required="true" data-parsley-length="[8, 32]"/>
+        </div>
+        <div class="signin-actions">
+          <button class="btn btn-pill btn-primary-mark waves-effect waves-light my-font-size-1" type="submit">登入</button>
+        </div>
+        <div class="signin-account my-font-size-2"><span>還沒有帳號嗎？</span>&nbsp;<a class="signin-account-link" href="/signup">開始註冊</a></div>
+      </form>
+    </div>
+  </div>
+</div>
+</body>
+</html>

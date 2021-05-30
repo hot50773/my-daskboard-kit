@@ -1,5 +1,5 @@
-.si-error-404 { overflow: hidden; }
-.si-error-404--bg {
+.my-error-404 { overflow: hidden; }
+.my-error-404--bg {
   background-position: bottom right;
   background-repeat: no-repeat;
   background-attachment: fixed;
@@ -7,34 +7,34 @@
   background-color: $primary;
 }
 
-.si-error-404 .si-error__number--font {
+.my-error-404 .my-error__number--font {
   font-size: 15.7rem;
   font-weight: 700;
   color: $warning;
   line-height: 0.8;
 }
 
-.si-error-404 .si-error__title--font {
+.my-error-404 .my-error__title--font {
   font-size: 10rem;
   font-weight: 700;
   color: $warning;
 }
 
-.si-error-404 .si-error__title--space {
+.my-error-404 .my-error__title--space {
   margin-top: -4rem;
 }
 
-.si-error-404 .si-error__description--space {
+.my-error-404 .my-error__description--space {
   margin-top: -4rem;
 }
 
-.si-error-404 .si-error__description--font {
+.my-error-404 .my-error__description--font {
   font-size: 2.5rem;
   font-weight: 700;
   color: #ffffff;
 }
 
-.si-error-404 .si-error__img-wrapper {
+.my-error-404 .my-error__img-wrapper {
   /* background-color: ivory; */
   position: relative;
   display: block;
@@ -44,12 +44,12 @@
   margin: auto 0;
 }
 
-.si-error-404 .si-error__img-wrapper::before {
+.my-error-404 .my-error__img-wrapper::before {
   display: block;
   content: '';
   padding-top: 140%;
 }
-.si-error-404 .si-error__img-content {
+.my-error-404 .my-error__img-content {
   position: absolute;
   top: 0;
   bottom: 0;
@@ -60,17 +60,17 @@
 }
 
 @media (max-width: 769px) {
-  .si-error-404 .si-error__number--font {
+  .my-error-404 .my-error__number--font {
     font-size: 12rem;
     line-height: 1;
   }
 
-  .si-error-404 .si-error__title--font {
+  .my-error-404 .my-error__title--font {
     font-size: 7rem;
   }
 }
 
-.si-error-500 {
+.my-error-500 {
   background-color: $warning-mark;
   background-position: center;
   background-repeat: no-repeat;
@@ -80,19 +80,19 @@
   flex-wrap: wrap;
   text-align: center;
 
-  & .si-error__subtitle {
+  & .my-error__subtitle {
     font-size: 8rem;
     margin-top: 5rem;
     font-weight: 600;
   }
 
-  & .si-error__description {
+  & .my-error__description {
     font-size: 2.3rem;
     font-weight: 500;
     line-height: 3rem;
   }
 
-  .si-error__img-wrapper {
+  .my-error__img-wrapper {
     z-index: 0;
     position: relative;
     display: block;
@@ -101,12 +101,12 @@
     margin: -8% 0 auto;
   }
 
-  .si-error__img-wrapper::before {
+  .my-error__img-wrapper::before {
     display: block;
     content: '';
     padding-top: 35%;
   }
-  .si-error__img-content {
+  .my-error__img-content {
     position: absolute;
     top: 0;
     bottom: 0;
@@ -116,7 +116,7 @@
     border: 0;
   }
 
-  .si-error__img-wire-left {
+  .my-error__img-wire-left {
     width: 36%;
     position: absolute;
     top: 0;
@@ -124,14 +124,14 @@
   }
 
 
-  .si-error__img-wire-right {
+  .my-error__img-wire-right {
     width: 40%;
     position: absolute;
     top: 4%;
     right: 0;
   }
 
-  .si-error__img-cat {
+  .my-error__img-cat {
     width: 12%;
     position: absolute;
     top: 23%;
@@ -141,11 +141,11 @@
 
 
 @media (max-width: 768px) {
-  .si-error-500  .si-error__subtitle {
+  .my-error-500  .my-error__subtitle {
     font-size: 5rem;
   }
 
-  .si-error-500 .si-error__description {
+  .my-error-500 .my-error__description {
     font-size: 1.7rem;
     padding-left: 1.5rem;
     padding-right: 1.5rem;

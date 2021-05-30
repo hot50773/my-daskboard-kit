@@ -137,7 +137,7 @@ hr {
 @each $color, $value in $theme-colors {
   .alert-solid-#{$color} {
     background: $value;
-    color: si-color-yiq($value, darken($value, $si-text-yiq-darken-rate), #fff);
+    color: my-color-yiq($value, darken($value, $my-text-yiq-darken-rate), #fff);
     border: transparent;
   }
 
@@ -150,7 +150,7 @@ hr {
 @each $color, $value in $theme-colors {
   .btn.btn-solid-#{$color} {
     background: $value;
-    color: si-color-yiq($value, darken($value, $si-text-yiq-darken-rate), #fff);
+    color: my-color-yiq($value, darken($value, $my-text-yiq-darken-rate), #fff);
   }
 }
 
@@ -158,10 +158,10 @@ hr {
   .badge.badge-solid-#{$color},
   .badge.badge-solid-#{$color}-pulse {
     background: $value;
-    color: si-color-yiq($value, darken($value, $si-text-yiq-darken-rate), #fff);
+    color: my-color-yiq($value, darken($value, $my-text-yiq-darken-rate), #fff);
   }
 
   .badge.badge-solid-#{$color}-pulse {
-    @include si-animation("si-pulse-#{$color} 1s linear forwards");
+    @include my-animation("my-pulse-#{$color} 1s linear forwards");
   }
 }
