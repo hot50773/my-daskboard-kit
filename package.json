@@ -1,0 +1,19 @@
+{
+  "name": "bootstrap4-shards-boilplate",
+  "version": "0.0.0",
+  "description": "a template based on shards-ui",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build:css": "node sass.config.js",
+    "build:test": "sass ./src/scss/base.scss:./dist/css/base.css"
+  },
+  "author": "Mindy",
+  "license": "MIT",
+  "dependencies": {
+    "bootstrap": "^4.3.1",
+    "node-sass": "^6.0.0",
+    "node-sass-import": "^2.0.1",
+    "shards-ui": "^3.0.0"
+  }
+}
