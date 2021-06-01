@@ -14,7 +14,7 @@
       <h2 class="mb-0">編輯帳號</h2><span>&nbsp;</span>
     </div>
     <div class="row">
-      <div class="col-4">
+      <div class="col-md-4">
         <div class="card">
           <div class="card-body">
             <div class="mb-4 d-flex justify-content-between"><span>姓名:</span><span>王ＯＯ</span></div>
@@ -28,14 +28,14 @@
         </div>
       </div>
 
-      <div class="col-8">
+      <div class="col-md-8">
         <div class="card">
           <div class="tab-content" id="nav-pills-tab-content">
             <!-- Form: 基本資訊 -->
             <div class="tab-pane fade show active" id="nav-pills-profile" role="tabpanel" aria-labelledby="nav-pills-profile-tab">
               <div class="card-header">基本資訊</div>
               <div class="card-body">
-                <form id="form-edit" name="form-edit" method="POST" action="/main/account/edit/accountId">
+                <form id="form-edit" name="form-edit" method="POST" action="">
                   <input class="form-control" name="account" type="hidden" value="accountId"/>
                   <div class="form-group row">
                     <label class="col-4 col-form-label">姓名</label>
@@ -82,7 +82,7 @@
             <div class="tab-pane fade" id="nav-pills-password" role="tabpanel" aria-labelledby="nav-pills-password-tab">
               <div class="card-header">密碼</div>
               <div class="card-body">
-                <form id="form-password" name="form-password" method="POST" action="/main/account/edit/accountId/password">
+                <form id="form-password" name="form-password" method="POST" action="">
                   <input class="form-control" name="account" type="hidden" value="accountId"/>
                   <div class="form-group row">
                     <label class="col-4 col-form-label">密碼</label>

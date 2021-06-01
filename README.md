@@ -10,7 +10,7 @@ TODO: 自動偵測檔案變更並編譯：https://github.com/sass/node-sass-midd
 
 # 頁面一覽
 ### 佈景主題
-- [側邊欄](sidebar.html)
+- [側邊欄](sidebar1.html)
 - [元件展示](theme.html)
 
 ### 會員中心
