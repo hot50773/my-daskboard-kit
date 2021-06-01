@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/line-awesome/1.3.0/line-awesome/css/line-awesome.min.css"/>
+  <link rel="stylesheet" href="dist/css/theme.css">
+  <link rel="stylesheet" href="dist/css/base.css">
+</head>
+<body>
+  <div class="container">
+    <div class="d-flex justify-content-between mb-5"><a class="btn btn-primary-mark waves-effect waves-light p-2" href="/main/account/edit"><i class="la la-arrow-left si-font-size-2"></i></a>
+      <h2 class="mb-0">編輯帳號</h2><span>&nbsp;</span>
+    </div>
+    <div class="row">
+      <div class="col-4">
+        <div class="card">
+          <div class="card-body">
+            <div class="mb-4 d-flex justify-content-between"><span>姓名:</span><span>王ＯＯ</span></div>
+            <div class="nav flex-column nav-pills" id="nav-pills-tab" role="tablist" aria-orientation="vertical">
+              <a class="nav-link active my-1 waves-effect waves-light" id="nav-pills-profile-tab" data-toggle="pill" href="#nav-pills-profile" role="tab" aria-controls="nav-pills-profile" aria-selected="true">基本資訊</a>
+
+              <a class="nav-link my-1 waves-effect waves-light" id="nav-pills-password-tab" data-toggle="pill" href="#nav-pills-password" role="tab" aria-controls="nav-pills-password" aria-selected="false">密碼</a>
+
+              <a class="nav-link my-1 waves-effect waves-light" id="nav-pills-activate-tab" data-toggle="pill" href="#nav-pills-activate" role="tab" aria-controls="nav-pills-activate" aria-selected="false">帳號啟用/停用</a></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-8">
+        <div class="card">
+          <div class="tab-content" id="nav-pills-tab-content">
+            <!-- Form: 基本資訊 -->
+            <div class="tab-pane fade show active" id="nav-pills-profile" role="tabpanel" aria-labelledby="nav-pills-profile-tab">
+              <div class="card-header">基本資訊</div>
+              <div class="card-body">
+                <form id="form-edit" name="form-edit" method="POST" action="/main/account/edit/accountId">
+                  <input class="form-control" name="account" type="hidden" value="accountId"/>
+                  <div class="form-group row">
+                    <label class="col-4 col-form-label">姓名</label>
+                    <div class="col-8">
+                      <input class="form-control" id="inp-name" name="name" type="text" placeholder="姓名" autocomplete="off" value="王ＸＸ" required="required" data-parsley-required="true" data-parsley-length="[1, 32]" data-parsley-group="name"/>
+                    </div>
+                  </div>
+                  <div class="form-group row">
+                    <label class="col-4 col-form-label">電子信箱</label>
+                    <div class="col-8">
+                      <input class="form-control" id="inp-email" name="email" type="email" placeholder="common.emailOptional" autocomplete="off" value="wang.xx@gmail.com" data-parsley-type="email" data-parsley-required="false" data-parsley-length="[1, 512]"/>
+                    </div>
+                  </div>
+                  <hr class="my-4"/>
+                  <div class="form-group row">
+                    <label class="col-4 col-form-label">系統管理員</label>
+                    <div class="col-8">
+                      <div class="custom-control custom-switch col-form-label">
+                        <input id="chb-p-system-admin" type="checkbox" name="permission-system-admin" checked class="custom-control-input">
+                        <label class="custom-control-label" for="chb-p-system-admin"></label>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="form-group row">
+                    <label class="col-4 col-form-label">權限1</label>
+                    <div class="col-8">
+                      <div class="custom-control custom-switch col-form-label">
+                        <input id="chb-p-1" type="checkbox" name="permission-1" checked  class="custom-control-input"/>
+                        <label class="custom-control-label" for="chb-p-1"></label>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="form-group row my-4">
+                    <div class="col-8 offset-4">
+                      <button class="btn btn-primary si-font-size-1 waves-effect" type="submit">送出</button>
+                    </div>
+                  </div>
+                </form>
+              </div>
+            </div>
+
+            <!-- Form: 編輯密碼 -->
+            <div class="tab-pane fade" id="nav-pills-password" role="tabpanel" aria-labelledby="nav-pills-password-tab">
+              <div class="card-header">密碼</div>
+              <div class="card-body">
+                <form id="form-password" name="form-password" method="POST" action="/main/account/edit/accountId/password">
+                  <input class="form-control" name="account" type="hidden" value="accountId"/>
+                  <div class="form-group row">
+                    <label class="col-4 col-form-label">密碼</label>
+                    <div class="col-8">
+                      <div class="input-group">
+                        <input class="form-control" id="inp-password" name="password" type="password" placeholder="密碼" autocomplete="off" required="required" data-parsley-required="true" data-parsley-length="[8, 32]" data-parsley-errors-container="#inp-password-error-msg"/><span class="input-group-append" id="inp-password-eye-icon"><span class="input-group-text waves-effect waves-light"><i class="la la-eye-slash"></i></span></span>
+                      </div>
+                      <div class="si-account__password-error-msg" id="inp-password-error-msg"></div>
+                    </div>
+                  </div>
+                  <div class="form-group row">
+                    <label class="col-4 col-form-label">確認密碼</label>
+                    <div class="col-8">
+                      <input class="form-control" id="inp-valid-password" name="valid-password" type="password" placeholder="確認密碼" autocomplete="off" required="required" data-parsley-required="true" data-parsley-length="[8, 32]" data-parsley-equalto="#inp-password" data-parsley-equalto-message="密碼不符。"/>
+                    </div>
+                  </div>
+                  <div class="form-group row my-4">
+                    <div class="col-8 offset-4">
+                      <button class="btn btn-primary si-font-size-1 waves-effect waves-light" type="submit">送出</button>
+                    </div>
+                  </div>
+                </form>
+              </div>
+            </div>
+
+            <!-- Modal Form: 啟用/停用 -->
+            <div class="tab-pane fade" id="nav-pills-activate" role="tabpanel" aria-labelledby="nav-pills-activate-tab">
+              <!-- 'common.active'-->
+              <div class="card-header">帳號啟用/停用</div>
+              <div class="card-body">
+                <button class="btn waves-effect waves-light btn-danger" type="button" data-toggle="modal" data-target="#modal-active-deactive">停用</button>
+                <div class="modal fade" id="modal-active-deactive" role="dialog">
+                  <div class="modal-dialog modal-dialog-centered" role="document">
+                    <div class="modal-content">
+                      <form id="form-status" name="form-status" method="POST" action="">
+                        <div class="modal-header border-bottom-0">
+                          <button class="close px-2" type="button" data-dismiss="modal">&times;</button>
+                        </div>
+                        <div class="modal-body">
+                          <input class="form-control" name="account" type="hidden" value="accountId"/>
+                          <input class="form-control" name="old-status" type="hidden" value="-1"/>
+                          <input class="form-control" name="new-status" type="hidden" value="10"/>
+                          <h5 class="mb-4">確定要停用此帳號 ?</h5>
+                          <div class="mb-2">帳號:&nbsp;accountID
+                          </div>
+                          <div class="mb-2">姓名:&nbsp;王xx
+                          </div>
+                        </div>
+                        <div class="modal-footer">
+                          <button class="btn btn-secondary waves-effect waves-light mr-2" type="button" data-dismiss="modal">取消</button>
+                          <button class="btn waves-effect waves-light btn-danger" type="submit">停用</button>
+                        </div>
+                      </form>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js' integrity='sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==' crossorigin='anonymous'></script>
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/js/bootstrap.min.js' integrity='sha512-Ah5hWYPzDsVHf9i2EejFBFrG2ZAPmpu4ZJtW4MfSgpZacn+M9QHDt+Hd/wL1tEkk1UgbzqepJr6KnhZjFKB+0A==' crossorigin='anonymous'></script>
+
+<script>
+  class Main {
+    constructor () {
+      this.dom = {}
+    }
+
+    init() {
+      this.dom.passwordEye = document.getElementById('inp-password-eye-icon')
+      this.dom.inpPassword = document.getElementById('inp-password')
+      this.dom.inpValidPassword = document.getElementById('inp-valid-password')
+
+      this._setupPasswordVisiblility()
+    }
+
+    _setupPasswordVisiblility () {
+      const $eyeBox = $(this.dom.passwordEye)
+      const $eye = $eyeBox.find('i.la')
+
+      const $inpValidPassword = $(this.dom.inpValidPassword)
+      const $inpPassword = $(this.dom.inpPassword)
+
+      $eyeBox.on('click', function () {
+        // toggle password state
+        if ($inpPassword.attr('type') === 'password') {
+          // show
+          $inpPassword.attr('type', 'text')
+          $inpValidPassword.attr('type', 'text')
+
+          // toggle icon
+          $eye.addClass('la-eye').removeClass('la-eye-slash')
+        } else {
+          // hide
+          $inpPassword.attr('type', 'password')
+          $inpValidPassword.attr('type', 'password')
+
+          // toggle icon
+          $eye.addClass('la-eye-slash').removeClass('la-eye')
+        }
+      })
+    }
+}
+
+new Main().init()
+</script>
+</body>
+</html>
