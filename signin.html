@@ -5,6 +5,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
   <title>Document</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/line-awesome/1.3.0/line-awesome/css/line-awesome.min.css"/>
   <link rel="stylesheet" href="dist/css/theme.css">
   <link rel="stylesheet" href="dist/css/base.css">
 </head>
@@ -12,31 +13,40 @@
 <div class="my-page-wrapper my-signin my-signin--bg">
   <div class="signin-container">
     <div class="signin-body">
-      <div class="signin-logo"><img class="w-100" alt="logo" /></div>
+      <h1 class="text-center my-font-size-6 mb-4">登入</h1>
+      <!-- <div class="signin-logo">
+        <img class="w-100" alt="logo" />
+      </div> -->
 
       <div class="alert alert-danger fade show my-5" role="alert">
         <div class="alert-icon"><i class="la la-exclamation-triangle"></i></div>
-        <div class="alert-text text-center mr-2">message<br/>message <br> message
+        <div class="alert-text text-center mr-2">message<br/>demo
         </div>
         <div class="alert-close">
-          <button class="close" type="button" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">X<i class="la la-close"></i></span></button>
+          <button class="close" type="button" data-dismiss="alert" aria-label="Close"><span aria-hidden="true"><i class="la la-close"></i></span></button>
         </div>
       </div>
 
       <form class="form" id="form-signin" method="POST" name="form-signin" action="/signin">
         <div class="form-group signin-form-group">
-          <input class="form-control signin-input" id="inp-account" name="account" type="text" placeholder="account" required="required" data-parsley-required="true" data-parsley-length="[4, 32]"/>
+          <input class="form-control signin-input" id="inp-account" name="account" type="text" placeholder="account" required/>
         </div>
         <div class="form-group signin-form-group-last">
-          <input class="form-control signin-input" id="inp-password" name="password" type="password" placeholder="password" required="required" data-parsley-required="true" data-parsley-length="[8, 32]"/>
+          <input class="form-control signin-input" id="inp-password" name="password" type="password" placeholder="password" required />
         </div>
         <div class="signin-actions">
           <button class="btn btn-pill btn-primary-mark waves-effect waves-light my-font-size-1" type="submit">註冊</button>
         </div>
-        <div class="signin-account my-font-size-2"><span>還沒有帳號嗎？</span>&nbsp;<a class="signin-account-link" href="/signup.html">開始註冊</a></div>
+        <div class="signin-account my-font-size-2">
+          <span>還沒有帳號嗎？</span>
+          &nbsp;
+          <a class="signin-account-link" href="/signup.html">開始註冊</a></div>
       </form>
     </div>
   </div>
 </div>
+
+<script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js' integrity='sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==' crossorigin='anonymous'></script>
+<script src='https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/js/bootstrap.min.js' integrity='sha512-Ah5hWYPzDsVHf9i2EejFBFrG2ZAPmpu4ZJtW4MfSgpZacn+M9QHDt+Hd/wL1tEkk1UgbzqepJr6KnhZjFKB+0A==' crossorigin='anonymous'></script>
 </body>
 </html>

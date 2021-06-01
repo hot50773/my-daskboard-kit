@@ -40,7 +40,7 @@
                   <div class="form-group row">
                     <label class="col-4 col-form-label">姓名</label>
                     <div class="col-8">
-                      <input class="form-control" id="inp-name" name="name" type="text" placeholder="姓名" autocomplete="off" value="王ＸＸ" required="required" data-parsley-required="true" data-parsley-length="[1, 32]" data-parsley-group="name"/>
+                      <input class="form-control" id="inp-name" name="name" type="text" placeholder="姓名" autocomplete="off" value="王ＸＸ" required data-parsley-required="true" data-parsley-length="[1, 32]" data-parsley-group="name"/>
                     </div>
                   </div>
                   <div class="form-group row">
@@ -88,7 +88,7 @@
                     <label class="col-4 col-form-label">密碼</label>
                     <div class="col-8">
                       <div class="input-group">
-                        <input class="form-control" id="inp-password" name="password" type="password" placeholder="密碼" autocomplete="off" required="required" data-parsley-required="true" data-parsley-length="[8, 32]" data-parsley-errors-container="#inp-password-error-msg"/><span class="input-group-append" id="inp-password-eye-icon"><span class="input-group-text waves-effect waves-light"><i class="la la-eye-slash"></i></span></span>
+                        <input class="form-control" id="inp-password" name="password" type="password" placeholder="密碼" autocomplete="off" required  data-parsley-errors-container="#inp-password-error-msg"/><span class="input-group-append" id="inp-password-eye-icon"><span class="input-group-text waves-effect waves-light"><i class="la la-eye-slash"></i></span></span>
                       </div>
                       <div class="si-account__password-error-msg" id="inp-password-error-msg"></div>
                     </div>
@@ -96,7 +96,7 @@
                   <div class="form-group row">
                     <label class="col-4 col-form-label">確認密碼</label>
                     <div class="col-8">
-                      <input class="form-control" id="inp-valid-password" name="valid-password" type="password" placeholder="確認密碼" autocomplete="off" required="required" data-parsley-required="true" data-parsley-length="[8, 32]" data-parsley-equalto="#inp-password" data-parsley-equalto-message="密碼不符。"/>
+                      <input class="form-control" id="inp-valid-password" name="valid-password" type="password" placeholder="確認密碼" autocomplete="off" required  data-parsley-equalto="#inp-password" data-parsley-equalto-message="密碼不符。"/>
                     </div>
                   </div>
                   <div class="form-group row my-4">
