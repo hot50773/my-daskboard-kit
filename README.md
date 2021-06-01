@@ -2,7 +2,7 @@
 基於 Bootstrap 4 和 Shards-UI 的自製模板 (來源：GogoVan 專案)
 
 # 編譯設定
-使用 node-sass 套件
+使用 [node-sass](https://github.com/sass/node-sass) 套件
 
 指令： $ `npm run build:css`
 

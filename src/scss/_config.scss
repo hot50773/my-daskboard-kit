@@ -1,7 +1,7 @@
 // Bootstrap config
 // For custimizing bootstrap components (cards, tables, buttons, ...), please checkout scss/components folder.
 // ---------------
-// si custom color
+// my custom color
 // ---------------
 $my-label-0: #d8d8d8;
 $my-label-1: #9b9b9b;
@@ -64,11 +64,10 @@ $theme-colors: (
 
 // 根據背景亮度決定文字為深色或淺色 (acceptable values are between 0 and 255)
 $yiq-contrasted-threshold:  190;
+
 // --------------------------
 // Other Bootstrap Variables
 // --------------------------
-// $sizes affects the `.h-*` and `.w-*` classes.
-
 // example:
 //   $sizes: (
 //     10: 10%,
@@ -93,7 +92,7 @@ $headings-font-weight:       600;
 $headings-color:            #ffffff;
 
 // btn
-$btn-font-size:               0.9rem;
+// $btn-font-size:               0.9rem;
 // $btn-padding-x: 1.75rem;
 
 // badge
@@ -120,7 +119,17 @@ $card-box-shadow:             0 .46875rem 2.1875rem rgba($my-label-6, .1),
                               0 .9375rem 1.40625rem rgba($my-label-6, .1),
                               0 .25rem .53125rem rgba($my-label-6, .12),
                               0 .125rem .1875rem rgba($my-label-6, .1) !important;
+// Modal
+$modal-content-bg:           $my-label-5;
+$modal-content-border-color: rgba(0, 0, 0, .2);
+$modal-header-border-color:  rgba(0, 0, 0, .2);;
+$modal-footer-border-color:  rgba(0, 0, 0, .2);;
+$modal-backdrop-bg:          black;
+$modal-backdrop-opacity:     0.7;
 
+// popover
+
+// $toast-header-background-color:     $my-label-5;
 // Tooltips
 // Popovers
 $popover-bg:                 $my-label-5;
@@ -184,22 +193,6 @@ $my-sidebar-panel-width:      260px;
 // --------------
 //   Keyframes
 // --------------
-@include my-keyframes('my-flash') {
-  from, 50%, to { opacity: 1; }
-  25%, 75% { opacity: 0; }
-}
-
-
-@include my-keyframes('my-progress-active-right') {
-  0% { background-position: 0 0; }
-  100% { background-position: 3.5rem 0; }
-}
-
-@include my-keyframes('my-progress-active-left') {
-  0% { background-position: 0 0; }
-  100% { background-position: -3.5rem 0; }
-}
-
 @each $name, $color in $theme-colors {
   @include my-keyframes('my-pulse-#{$name}') {
     0% { box-shadow: 0 0 0.75rem rgba($color, 1), 0 0 1.25rem rgba($color, 1); }

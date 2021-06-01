@@ -13,20 +13,6 @@ Badge Customization
   vertical-align: middle;
 }
 
-// badge-rounded
-.badge.badge-rounded {
-  border: 0;
-  border-radius: 1.7em;
-  transition: all 0.3s;
-  padding: 0.1em 0.3em;
-  margin: 0.1em 0.15em;
-  min-width: 1.5em;
-  height: 1.7em;
-  line-height: 1.5em;
-  font-size: 0.9em;
-  text-align: center;
-}
-
 // badge-dot
 .badge.badge-dot {
   display: inline-block;
@@ -36,7 +22,7 @@ Badge Customization
   height: 0.6rem;
   width: 0.6rem;
   padding: 0;
-  margin: 0;
+  margin: 0 0.5rem;
   font-size: 0;
   vertical-align: middle;
   text-align: center;
