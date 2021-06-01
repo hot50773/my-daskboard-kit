@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/line-awesome/1.3.0/line-awesome/css/line-awesome.min.css"/>
+  <link rel="stylesheet" href="dist/css/theme.css">
+  <link rel="stylesheet" href="dist/css/base.css">
+</head>
+<body>
+  <div class="my-page-wrapper">
+    <nav class="my-sidebar">
+      <ul class="list-unstyled my-sidebar__menu" id="my-sidebar-menu">
+            <li class="my-sidebar__menu-item"><a class="my-sidebar__menu-link" data-group="tab-collapsible" href="#tab-content1">
+                <div class="btn btn-light">tab1</div></a></li>
+            <li class="my-sidebar__menu-item"><a class="my-sidebar__menu-link" data-group="tab-collapsible" href="#tab-content2">
+                <div class="btn btn-light">tab2</div></a></li>
+            <li class="my-sidebar__menu-item"><a class="my-sidebar__menu-link" data-group="tab-collapsible" href="#tab-content3">
+                <div class="btn btn-light">tab3</div></a></li>
+      </ul>
+    </nav>
+    <div class="my-sidebar__panel-wrapper" id="my-sidebar-panel-wrapper">
+      <div class="my-sidebar__panel-item hide" id="tab-content1">
+        <div class="h-100 p-5">Consequat occaecat ullamco amet non eiusmod nostrud dolore irure incididunt est duis anim sunt officia. Fugiat velit proident aliquip nisi incididunt nostrud exercitation proident est nisi. Irure magna elit commodo anim ex veniam culpa eiusmod id nostrud sit cupidatat in veniam ad. Eiusmod consequat eu adipisicing minim anim aliquip cupidatat culpa excepteur quis. Occaecat sit eu exercitation irure Lorem incididunt nostrud.</div>
+      </div>
+      <div class="my-sidebar__panel-item hide" id="tab-content2">
+        <div class="h-100 p-5">Ad pariatur nostrud pariatur exercitation ipsum ipsum culpa mollit commodo mollit ex. Aute sunt incididunt amet commodo est sint nisi deserunt pariatur do. Aliquip ex eiusmod voluptate exercitation cillum id incididunt elit sunt. Qui minim sit magna Lorem id et dolore velit Lorem amet exercitation duis deserunt. Anim id labore elit adipisicing ut in id occaecat pariatur ut ullamco ea tempor duis.</div>
+      </div>
+      <div class="my-sidebar__panel-item hide" id="tab-content3" data-parent="#my-sidebar-collapse-wrapper">
+        <div class="h-100 p-5">Est quis nulla laborum officia ad nisi ex nostrud culpa Lorem excepteur aliquip dolor aliqua irure ex. Nulla ut duis ipsum nisi elit fugiat commodo sunt reprehenderit laborum veniam eu veniam. Eiusmod minim exercitation fugiat irure ex labore incididunt do fugiat commodo aliquip sit id deserunt reprehenderit aliquip nostrud. </div>
+      </div>
+    </div>
+    <div class="my-page-content">123123</div>
+  </div>
+
+<script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js' integrity='sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==' crossorigin='anonymous'></script>
+<script src='https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/js/bootstrap.min.js' integrity='sha512-Ah5hWYPzDsVHf9i2EejFBFrG2ZAPmpu4ZJtW4MfSgpZacn+M9QHDt+Hd/wL1tEkk1UgbzqepJr6KnhZjFKB+0A==' crossorigin='anonymous'></script>
+<script>
+  function setupSidebarPanel() {
+  const NAME = 'tab-collapsible'
+  const VERSION = '4.3.1'
+  const DATA_KEY = 'bs.tab-collapsible'
+  const EVENT_KEY = `.${DATA_KEY}`
+  const DATA_API_KEY = '.data-api'
+
+const Event = {
+  HIDE: `hide${EVENT_KEY}`,
+  HIDDEN: `hidden${EVENT_KEY}`,
+  SHOW: `show${EVENT_KEY}`,
+  SHOWN: `shown${EVENT_KEY}`,
+  CLICK_DATA_API: `click${EVENT_KEY}${DATA_API_KEY}`
+}
+  const ClassName = {
+    ACTIVE: 'active',
+    DISABLED: 'disabled',
+    FADE: 'fade',
+    SHOW: 'show'
+  }
+
+  const Selector = {
+    NAV_LIST_GROUP: '.my-sidebar__menu',
+    ACTIVE: '.active',
+    ACTIVE_UL: ':scope > li.active',
+    DATA_TOGGLE: '[data-toggle="tab-collapsible"]'
+  }
+    // const pageContent = this.dom.pageContent
+    // Collapsible Tab Panel
+  const tabWrapper = document.querySelector(Selector.NAV_LIST_GROUP)
+  const element = document.querySelectorAll('.my-sidebar__menu > li[data-group="tab-collapsible"] > a')
+  
+  const a = $('.my-sidebar__menu > li > a')
+  // const $activeTab = $('.sidebar__menu > li.active[data-group="tab-collapsible"]')
+  
+  a.click(function (e) {
+    e.preventDefault()
+
+    const $activeTabLink = $('#my-sidebar-menu > li> a.active[data-group="tab-collapsible"]').attr('href')
+    const $activeTab = $('#my-sidebar-menu > li > a.active[data-group="tab-collapsible"]')
+
+    const targetPanelId = $(this).attr('href')
+    let isCurrentActive = false
+
+    if ($(this).hasClass('active')) isCurrentActive = true
+
+    $activeTab.removeClass('active')
+    $($activeTabLink).removeClass('active')
+
+    // add 'active' css into current tab
+    if (!isCurrentActive) {
+      $(this).addClass('active')
+      $(targetPanelId).addClass('active')
+    }
+  })
+}
+
+$(document).ready(function() {
+				setupSidebarPanel()
+			});
+</script>
+</body>
+</html>

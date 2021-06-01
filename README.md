@@ -10,6 +10,7 @@ TODO: 自動偵測檔案變更並編譯：https://github.com/sass/node-sass-midd
 
 
 # File Structure
+```
 .
 ├── _config.scss
 ├── base.scss
@@ -26,22 +27,22 @@ TODO: 自動偵測檔案變更並編譯：https://github.com/sass/node-sass-midd
 │   ├── _custom-extensions.scss
 │   └── _import.scss
 └── theme.scss
-
+```
 # Plan
 預計功能
 ### 會員中心
-- sign in
-= sign up
-- forgot
-- edit account
+- [x] sign in
+- [x] sign up
+- [ ] forgot
+- [x] edit account
 
 # Dashbard 側邊欄
 
 # 元件展示
-- 色彩
-- 字體
-- 字型
-- 按鈕
-- 卡片
-- 表單
+- [x] 色彩
+- [x] 字體
+- [x] 字型
+- [x] 按鈕
+- [x] 卡片
+- [x] 表單
 

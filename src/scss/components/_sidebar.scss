@@ -1,6 +1,26 @@
 /* ---------
     SIDEBAR
 ------------ */
+.my-page-wrapper {
+  width: 100%;
+  min-height: 100%;
+  overflow-y: auto;
+}
+
+.my-page-wrapper {
+  display: flex;
+  align-items: stretch;
+}
+
+.my-page-content {
+  position: relative;
+  width: 100%;
+  min-height: 100vh;
+  // transition: all 0.3s;
+  padding-left: $my-sidebar-width;
+  &.is-sidebar-panel-active { padding-left: ($my-sidebar-width + $my-sidebar-panel-width);}
+}
+
 .my-sidebar {
   position: fixed;
   z-index: 1000;
@@ -106,6 +126,7 @@
 
   .my-sidebar__panel-item {
     min-width: $my-sidebar-panel-width;
+    max-width: $my-sidebar-panel-width * 1.5;
     background: $primary-mark;
     height: 100%;
     color: white;
